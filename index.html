@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    body{
+        background-image: url("bg.png");
+        font-family: 'Poppins', sans-serif;
+    }
+    h2{
+        text-align: center;
+        font-size: 3.5em;
+        color: rgb(90, 37, 192);
+        font-family: sans-serif;
+    }
+    #gamelogo{
+        width: 500px;
+        margin-left: 170px;
+    }
+    #playgame{
+        color: white;
+        font-size: 1.25em;
+        font-weight: bold;
+    }
+    #imageandbutton{
+        display: flex;
+        align-items: center;
+        margin-left: 70%;
+        margin-top: -20px;
+        cursor: pointer;
+    }
+    #imageandbutton #playgame{
+        padding-left: 18px;
+    }
+</style>
+<body>
+    <div>
+        <h2>Rock paper Scissors</h2>
+        <img id="gamelogo" src="game-image.png" alt="" >
+    </div>
+    <div id="imageandbutton">
+        <img  src="play-button.png" width="50px" alt="">
+        <span id="playgame">Play the Game</span>
+    </div>
+    <script>
+        var plybtn = document.querySelector("#imageandbutton")
+        plybtn.addEventListener("click", () =>{
+            window.location.href = "game.html"
+        })
+    </script>
+</body>
+</html>
