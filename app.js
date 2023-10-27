@@ -2,7 +2,7 @@ var rockbtn= document.getElementById("rockbutton");
 var scissorbtn= document.getElementById("scissorbutton");
 var paperbtn= document.getElementById("paperbutton");
 
-var btns = document.querySelectorAll(".logo")
+var btns = document.querySelectorAll(".logo")    
 var imageSources = ["paper-hand.png", "rock-hand.png", "scissors-hand.png"];
 var myimage = document.querySelector("#myImage")
 var compimage = document.querySelector("#compImg");
@@ -32,7 +32,7 @@ btns.forEach((el)=>{
             console.log("paper clicked")
             myimage.src = imageSources[0]
         }
-       
+       check_win()
     })
 })
 
@@ -62,16 +62,25 @@ function randomimage(){
         compScoreCount += 1;
     }
     console.log(myScoreCount,"  ",compScoreCount)
-    
+}
+
+function check_win(){
     if(myScoreCount >= 5){
-            if_won.style.display = "block";
-            console.log("You won")
-        }
-        else if(compScoreCount >=  5){
-            console.log("Computer won")
-            if_won.style.display = "block";
-            winngmsg.innerText = "Computer Won"
-        }
+        btns.forEach((el) =>{
+            el.style.display = "none"
+        })
+        if_won.style.display = "block";
+        console.log("You won")
+
+    }
+    else if(compScoreCount >=  5){
+        console.log("Computer won")
+        btns.forEach((el) =>{
+            el.style.display = "none"
+        })
+        if_won.style.display = "block";
+        winngmsg.innerText = "Computer Won"
+    }
 }
 
 
